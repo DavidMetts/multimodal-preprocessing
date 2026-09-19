@@ -1,0 +1,119 @@
+[
+  {
+    "event_id": "demo_01",
+    "fixture_truth": {
+      "flavor": "vanilla",
+      "scoops": 1,
+      "tone_hz": 220
+    },
+    "source_hashes": {
+      "text.txt": "228f2f7445bdcdba72244ea32544c000487cb35bc9fcfb1c153b1a41d2dbb909",
+      "image.png": "fd887e9d760a1cb7d98e58308762d37e46bf078db7612f6521c4cb7ffcd7ac7b",
+      "audio.wav": "3fef1f0e7cc4aedd34b709d826c987291802d6319e3439519c3d305a68929e22"
+    }
+  },
+  {
+    "event_id": "demo_02",
+    "fixture_truth": {
+      "flavor": "vanilla",
+      "scoops": 2,
+      "tone_hz": 440
+    },
+    "source_hashes": {
+      "text.txt": "228f2f7445bdcdba72244ea32544c000487cb35bc9fcfb1c153b1a41d2dbb909",
+      "image.png": "7ea01bb2ff503b8f5025afd3dd91b8935ed9ce2630e4a0682be2c99f0711696b",
+      "audio.wav": "afa40756a09f1e5e2c5a2837f77fa8158776abeb25b265978ff36501fa0a419d"
+    }
+  },
+  {
+    "event_id": "demo_03",
+    "fixture_truth": {
+      "flavor": "vanilla",
+      "scoops": 3,
+      "tone_hz": 880
+    },
+    "source_hashes": {
+      "text.txt": "228f2f7445bdcdba72244ea32544c000487cb35bc9fcfb1c153b1a41d2dbb909",
+      "image.png": "6cba3238897135851f8231611d2a1bb5c14f157e5966e86d475be59eed73eb9a",
+      "audio.wav": "4b9471c18cd22cb0c72bf8acf3d588dbb449fdf489d129ee5f9158290dc9e725"
+    }
+  },
+  {
+    "event_id": "demo_04",
+    "fixture_truth": {
+      "flavor": "chocolate",
+      "scoops": 1,
+      "tone_hz": 220
+    },
+    "source_hashes": {
+      "text.txt": "f499316e4ce472d64f5783549fd084d3c2cef569857c93f28c7a004349981039",
+      "image.png": "e51f03ca353200401b6af5e0fe1c635e0e61f30af7be029a0bc81dc143b0c07f",
+      "audio.wav": "3fef1f0e7cc4aedd34b709d826c987291802d6319e3439519c3d305a68929e22"
+    }
+  },
+  {
+    "event_id": "demo_05",
+    "fixture_truth": {
+      "flavor": "chocolate",
+      "scoops": 2,
+      "tone_hz": 440
+    },
+    "source_hashes": {
+      "text.txt": "f499316e4ce472d64f5783549fd084d3c2cef569857c93f28c7a004349981039",
+      "image.png": "3b49431c9fadda2786986bcad23374b7911928aaeea78d8b0c7fdfd60bd4a4b5",
+      "audio.wav": "afa40756a09f1e5e2c5a2837f77fa8158776abeb25b265978ff36501fa0a419d"
+    }
+  },
+  {
+    "event_id": "demo_06",
+    "fixture_truth": {
+      "flavor": "chocolate",
+      "scoops": 3,
+      "tone_hz": 880
+    },
+    "source_hashes": {
+      "text.txt": "f499316e4ce472d64f5783549fd084d3c2cef569857c93f28c7a004349981039",
+      "image.png": "47e957a763881bd3710c112600141163198b5311536bc0ce292101dfc0679fe4",
+      "audio.wav": "4b9471c18cd22cb0c72bf8acf3d588dbb449fdf489d129ee5f9158290dc9e725"
+    }
+  },
+  {
+    "event_id": "demo_07",
+    "fixture_truth": {
+      "flavor": "strawberry",
+      "scoops": 1,
+      "tone_hz": 220
+    },
+    "source_hashes": {
+      "text.txt": "931899d79236bff4ddf22d685a4af031589ae59c2b2e04722dbaf02677aab7f8",
+      "image.png": "0981b050c47aed27c041c06f39ee2c056aae16ab213b1fa1c24c507b439ae50a",
+      "audio.wav": "3fef1f0e7cc4aedd34b709d826c987291802d6319e3439519c3d305a68929e22"
+    }
+  },
+  {
+    "event_id": "demo_08",
+    "fixture_truth": {
+      "flavor": "strawberry",
+      "scoops": 2,
+      "tone_hz": 440
+    },
+    "source_hashes": {
+      "text.txt": "931899d79236bff4ddf22d685a4af031589ae59c2b2e04722dbaf02677aab7f8",
+      "image.png": "a0603db9cbf51c106b94da8d7e5fb7e00c83ac2c38b3dc33197469e290220dc3",
+      "audio.wav": "afa40756a09f1e5e2c5a2837f77fa8158776abeb25b265978ff36501fa0a419d"
+    }
+  },
+  {
+    "event_id": "demo_09",
+    "fixture_truth": {
+      "flavor": "strawberry",
+      "scoops": 3,
+      "tone_hz": 880
+    },
+    "source_hashes": {
+      "text.txt": "931899d79236bff4ddf22d685a4af031589ae59c2b2e04722dbaf02677aab7f8",
+      "image.png": "4b10f5ba417831631ca27687e6de62391b10f91aa35edc77ced01b818e2f9af0",
+      "audio.wav": "4b9471c18cd22cb0c72bf8acf3d588dbb449fdf489d129ee5f9158290dc9e725"
+    }
+  }
+]
