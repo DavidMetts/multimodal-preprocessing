@@ -58,6 +58,7 @@ def import_zips(uploads):
                 if path.is_absolute() or '..' in path.parts or '\\' in name or ':' in name:
                     raise ValueError('Unsafe ZIP path rejected: '+name)
                 if info.is_dir(): continue
+                if name != path.as_posix(): raise ValueError('Non-canonical ZIP path rejected: '+name)
                 if name in seen: raise ValueError('Duplicate ZIP member: '+name)
                 seen.add(name)
                 if path.name not in NAMES: raise ValueError('Unexpected archive file: '+name)

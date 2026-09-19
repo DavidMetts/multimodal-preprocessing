@@ -28,6 +28,10 @@ def fit(documents, references):
 def validate(model):
     if model.get("token_pattern") != TOKEN_PATTERN or model.get("schema_version") != 1:
         raise ValueError("Unsupported text reference settings.")
+    if (model.get('lowercase') is not True or model.get('stop_words') is not None
+            or model.get('tf') != 'count / all document tokens'
+            or model.get('normalization') != 'L2 of TF-IDF across frozen vocabulary; zero vectors stay zero'):
+        raise ValueError('Unsupported text transformation rules.')
     v = model.get("vocabulary", [])
     if not v or len(v)>2000 or len(set(v)) != len(v) or any(not isinstance(t,str) or not re.fullmatch(TOKEN_PATTERN,t) for t in v):
         raise ValueError("Invalid frozen vocabulary.")
@@ -36,6 +40,8 @@ def validate(model):
     idf=model.get("idf",[])
     if not isinstance(n,int) or n<1 or len(df)!=len(v) or len(idf)!=len(v):
         raise ValueError("Invalid reference dimensions.")
+    if not isinstance(model.get('reference_sources'),list) or len(model['reference_sources'])!=n:
+        raise ValueError('Reference source list must match the fit collection size.')
     if any(not isinstance(d,int) or not 1<=d<=n for d in df):
         raise ValueError("Invalid document frequencies.")
     if not np.allclose(idf,[math.log((1+n)/(1+d))+1 for d in df]):

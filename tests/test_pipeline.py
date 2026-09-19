@@ -28,6 +28,8 @@ class PipelineTests(unittest.TestCase):
         one=text.fit(['vanilla vanilla cream'],['one'])
         self.assertEqual(one['idf'],[1.,1.])
         self.assertEqual(text.transform('unseen',one)['unknown_token_count'],1)
+        bad=one|{'lowercase':False}
+        with self.assertRaises(ValueError): text.validate(bad)
 
     def test_image_invariants(self):
         colors={'vanilla':[255,248,231],'chocolate':[121,80,57],'strawberry':[237,138,168]}
@@ -91,12 +93,17 @@ class PipelineTests(unittest.TestCase):
         invalid=[make_event({'audio.wav':b'broken','image.png':b'broken','text.txt':b'\xff'},'invalid')]
         t,_,_=prepare(invalid,self.model)
         self.assertTrue(all(table.status[0]=='invalid' for table in t.values()))
-        for name in ('../text.txt','/text.txt','C:/text.txt','a\\text.txt'):
+        for name in ('../text.txt','/text.txt','C:/text.txt','a\\text.txt','a/./text.txt'):
             b=io.BytesIO()
             member=zipfile.ZipInfo('placeholder'); member.filename=name
             with zipfile.ZipFile(b,'w') as z:z.writestr(member,b'bad')
             with self.assertRaises(ValueError): import_zips([('bad.zip',b.getvalue())])
         with self.assertRaises(ValueError): import_zips([('one.zip',(ROOT/'demo_collection.zip').read_bytes()),('two.zip',(ROOT/'demo_collection.zip').read_bytes())])
+        timestamp='2026-09-19T12:30:00+00:00'
+        event=make_event({'text.txt':b'vanilla','manifest.json':json.dumps({'event_id':'snapshot_1','event_time':timestamp}).encode()},'source')
+        t,_,meta=prepare([event],self.model)
+        self.assertTrue(all(table.event_time[0]==timestamp for table in t.values()))
+        self.assertEqual(meta['events'][0]['event_time'],timestamp)
 
     def test_dashboard_controls(self):
         from streamlit.testing.v1 import AppTest
